@@ -1,0 +1,15 @@
+apis:
+  - name: devops-ui
+    plugins: []
+    attributes:
+      uris:
+        - /
+      strip_uri: false
+      preserve_host: false
+      upstream_url: 'https://webapp.devops-belfast-0.us-east-1.pdev.r7ops.com'
+      retries: 5
+      upstream_connect_timeout: 60000
+      upstream_read_timeout: 60000
+      upstream_send_timeout: 60000
+      https_only: false
+      http_if_terminated: true
