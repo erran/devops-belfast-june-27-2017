@@ -1,6 +1,12 @@
 apis:
   - name: devops-canary-ui
     plugins:
+      - name: acl
+        attributes:
+          enabled: true
+          config:
+            whitelist:
+              - canary-users
       - name: basic-auth
         attributes:
           enabled: true
@@ -39,10 +45,20 @@ apis:
 
 consumers:
   - username: jdoe
+    acls:
+      - group: beta-users
     credentials:
       - name: basic-auth
         attributes:
           password: 9fd10d6cca742c2666bdf137d04c0398f55f4c3e
           username: jdoe
+  - username: jsmith
+    acls:
+      - group: canary-users
+    credentials:
+      - name: basic-auth
+        attributes:
+          password: 9fd10d6cca742c2666bdf137d04c0398f55f4c3e
+          username: jsmith
 
 plugins: []
